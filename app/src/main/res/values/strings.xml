@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LocationAndFirestoreExample</string>
+    <string name="google_maps_key">AIzaSyAc8xjnMgJhAMi39aJM0Yqa7Ld1QSvY6j0</string>
+</resources>
