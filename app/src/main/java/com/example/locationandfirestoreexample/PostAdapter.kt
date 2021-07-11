@@ -16,18 +16,18 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
             val model = differ.currentList[adapterPosition]
             d("MODEL","$model")
             binding.apply {
-                tvStatus.text = model.status
-                tvUserName.text = model.userName
+                tvUserName.text = model.authorUserName
+                tvStatus.text = model.text
             }
         }
     }
 
-    private val diffUtil = object : DiffUtil.ItemCallback<UserModel>() {
-        override fun areItemsTheSame(oldItem: UserModel, newItem: UserModel): Boolean {
-            return oldItem.userName == newItem.userName
+    private val diffUtil = object : DiffUtil.ItemCallback<PostModel>() {
+        override fun areItemsTheSame(oldItem: PostModel, newItem: PostModel): Boolean {
+            return oldItem.postId == newItem.postId
         }
 
-        override fun areContentsTheSame(oldItem: UserModel, newItem: UserModel): Boolean {
+        override fun areContentsTheSame(oldItem: PostModel, newItem: PostModel): Boolean {
             return oldItem == newItem
         }
 
